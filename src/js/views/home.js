@@ -2,60 +2,43 @@ import React, { useContext } from "react";
 import "../../styles/home.css";
 import Person from "../component/person";
 import { Context } from "../store/appContext";
+import { Single } from "./single";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
   console.log(store.Personajes);
   return (
-    <div >
+    <div>
       <div className="container ">
-        <div className="row  d-flex flex-row flex-nowrap overflow-auto">
-          <div className="col-1">
-            <h1
-              className=" d-flex justify-content-start"
-              style={{ color: "red" }}
-            >
-              Characters
-            </h1>
-
-            {store.Personajes.map((item, i) => {
-              return <Person key={i} name={item.name} />;
-            })}
-          </div>
+        <h1 className=" d-flex justify-content-start" style={{ color: "red" }}>
+          Characters
+        </h1>
+        <div className=" d-flex flex-row flex-nowrap overflow-auto w-auto">
+          {store.Personajes.map((item, i) => {
+            return <Person  key={i} uid={item.uid} name={item.name} />;
+          })}
         </div>
       </div>
 
       <div className="container">
-        <div className="col-10">
-          <div className="container flex-nowrap ">
-            <h1
-              className=" d-flex justify-content-start"
-              style={{ color: "red" }}
-            >
-              Planets
-            </h1>
-           
-            {store.Planetas.map((item, i) => {
-              return <Person key={i} name={item.name} />;
-            })}
-          </div>
+        <h1 className=" d-flex justify-content-start" style={{ color: "red" }}>
+          Planets
+        </h1>
+        <div className="d-flex flex-row flex-nowrap overflow-auto w-auto">
+          {store.Planetas.map((item, i) => {
+            return <Person key={i} uid={item.uid} name={item.name} />;
+          })}
         </div>
       </div>
 
       <div className="container">
-        <div className="col-10">
-          <div className="container flex-nowrap ">
-            <h1
-              className=" d-flex justify-content-start"
-              style={{ color: "red" }}
-            >
-              Vehiculos
-            </h1>
-           
-            {store.Vehiculos.map((item, i) => {
-              return <Person key={i} name={item.name} />;
-            })}
-          </div>
+        <h1 className=" d-flex justify-content-start" style={{ color: "red" }}>
+          Vehiculos
+        </h1>
+        <div className="d-flex flex-row flex-nowrap overflow-auto w-auto">
+          {store.Vehiculos.map((item, i) => {
+            return <Person key={i} uid={item.uid} name={item.name} />;
+          })}
         </div>
       </div>
     </div>

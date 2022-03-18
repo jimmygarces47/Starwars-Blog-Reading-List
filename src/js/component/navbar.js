@@ -14,7 +14,7 @@ export const Navbar = () => {
           </span>
         </Link>
         <div className="ml-auto">
-          <Link to="/demo">
+          
             <div className="dropdown">
               <button
                 className="btn btn-primary dropdown-toggle"
@@ -42,7 +42,7 @@ export const Navbar = () => {
                 ))
               : "Empty"}</ul>
             </div>
-          </Link>
+          
         </div>
       </div>
     </nav>

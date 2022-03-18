@@ -1,5 +1,6 @@
 import React, { Component ,useContext} from "react";
 import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 const Person = (props) => {
   const { store, actions } = useContext(Context);
   return (
@@ -25,12 +26,9 @@ const Person = (props) => {
           <br></br>
           <div className="row">
             <div className="col-6">
-              <button
-                href="#"
-                className="btn btn-primary  d-flex justify-content-start "
-              >
-                Learn More
-              </button>
+            <Link to={"/single/" + props.uid}>
+								<span>Link to sigle person: </span>
+							</Link>
               </div>
               <div className="col-6">
               <button type="button" className="btn btn-outline-warning d-flex justify-content-end ">
