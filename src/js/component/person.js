@@ -7,10 +7,14 @@ const Person = (props) => {
     <div className="container">
       <div className="card" style={{ width: "400px" }}>
         <img
-          src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
+          src={`https://starwars-visualguide.com/assets/img/${props.type=="personajes" ?"characters": props.type=="planetas"?"planets":"starships"}/${props.uid}.jpg`}
           className="card-img-top"
           style={{ width: " 400px", height: "250px" }}
           alt="..."
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null; // prevents looping
+            currentTarget.src="https://starwars-visualguide.com/assets/img/placeholder.jpg";
+          }}
         ></img>
         <div className="card-body">
           <h5 className="card-title d-flex justify-content-start">{props.name}</h5>
@@ -26,7 +30,7 @@ const Person = (props) => {
           <br></br>
           <div className="row">
             <div className="col-6">
-            <Link to={"/single/" + props.uid}>
+            <Link to={"/single/" + props.uid+"/"+props.type}>
 								<span>Link to sigle person: </span>
 							</Link>
               </div>

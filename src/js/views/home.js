@@ -15,7 +15,7 @@ export const Home = () => {
         </h1>
         <div className=" d-flex flex-row flex-nowrap overflow-auto w-auto">
           {store.Personajes.map((item, i) => {
-            return <Person  key={i} uid={item.uid} name={item.name} />;
+            return <Person type={"personajes"}  key={i} uid={item.uid} name={item.name} />;
           })}
         </div>
       </div>
@@ -26,7 +26,7 @@ export const Home = () => {
         </h1>
         <div className="d-flex flex-row flex-nowrap overflow-auto w-auto">
           {store.Planetas.map((item, i) => {
-            return <Person key={i} uid={item.uid} name={item.name} />;
+            return <Person type={"planetas"} key={i} uid={item.uid} name={item.name} />;
           })}
         </div>
       </div>
@@ -37,7 +37,7 @@ export const Home = () => {
         </h1>
         <div className="d-flex flex-row flex-nowrap overflow-auto w-auto">
           {store.Vehiculos.map((item, i) => {
-            return <Person key={i} uid={item.uid} name={item.name} />;
+            return <Person type={"vehiculo"} key={i} uid={item.uid} name={item.name} />;
           })}
         </div>
       </div>

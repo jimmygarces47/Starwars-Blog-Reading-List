@@ -18,6 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     Vehiculos:[],
     Favorite:[],
     Personaje:{},
+    DetallePersonaje:[],
     },
    
     actions: {
@@ -42,7 +43,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((data) => setStore({ Planetas: data.results }) );
       },
       ObtenerVehiculos:() =>{
-        fetch("https://www.swapi.tech/api/vehicles")
+        fetch("https://www.swapi.tech/api/starships")
         .then((response)=> response.json())
         .then((data)=> setStore({Vehiculos:data.results}));
       },
@@ -59,6 +60,24 @@ const getState = ({ getStore, getActions, setStore }) => {
         fetch(`https://www.swapi.tech/api/people/${theid}`)//fetch para obtener cada personaje
           .then((response) => response.json())
           .then((data) => setStore({ Personaje: data.result }))
+      },
+      GetDetallePesonaje:(theid)=>{
+        fetch(`https://www.swapi.tech/api/people/${theid}`)//fetch para obtener cada personaje
+          .then((response) => response.json())
+          .then((data) => setStore({ DetallePersonaje: data.result }))
+
+      },
+      GetDetalleVehiculo:(theid)=>{
+        fetch(`https://www.swapi.tech/api/starships/${theid}`)//fetch para obtener cada personaje
+        .then((response) => response.json())
+        .then((data) => setStore({ DetallePersonaje: data.result }))
+
+      },
+      GetDetallePlaneta:(theid)=>{
+        fetch(`https://www.swapi.tech/api/planets/${theid}`)//fetch para obtener cada personaje
+        .then((response) => response.json())
+        .then((data) => setStore({ DetallePersonaje: data.result }))
+
       },
 
 
