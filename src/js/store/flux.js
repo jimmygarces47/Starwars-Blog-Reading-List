@@ -18,7 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     Vehiculos:[],
     Favorite:[],
     Personaje:{},
-    DetallePersonaje:[],
+    DetallePersonaje:[],//cambiar el nombre de esta variable ya que es donde se saca toda la info y el nombrre no concuerda
     },
    
     actions: {

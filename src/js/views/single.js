@@ -51,7 +51,7 @@ export const Single = (props) => {
 
                   
                   { params.type==="personajes"?
-                    <div className="row">
+                    <div className="row my-5">
                       
                       <div className="col-2 text-center">
                         <p style={{ color: `red` }}>Gender</p>
@@ -87,6 +87,7 @@ export const Single = (props) => {
                   :""}
                   { params.type==="planetas"?
                     <>
+                    <div className="row">
                       <div className="col-2 text-center">
                         <p style={{ color: `red` }}>Climate</p>
                         <p style={{ color: `red` }}>
@@ -116,11 +117,13 @@ export const Single = (props) => {
                         <p style={{ color: `red` }}>
                           {store.DetallePersonaje.properties.diameter}
                         </p>
+                        </div>
                       </div>
                     </>
                   :""}
                   { params.type==="vehiculo"?
                     <>
+                    <div className="row">
                       <div className="col-2 text-center">
                         <p style={{ color: `red` }}>Model</p>
                         <p style={{ color: `red` }}>
@@ -156,6 +159,7 @@ export const Single = (props) => {
                         <p style={{ color: `red` }}>
                           {store.DetallePersonaje.properties.height}
                         </p>
+                      </div>
                       </div>
                     </>
                   :""}

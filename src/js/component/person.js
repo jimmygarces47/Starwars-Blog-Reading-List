@@ -31,7 +31,7 @@ const Person = (props) => {
           <div className="row">
             <div className="col-6">
             <Link to={"/single/" + props.uid+"/"+props.type}>
-								<span>Link to sigle person: </span>
+								<button className="btn btn-primary">Link to sigle person: </button>
 							</Link>
               </div>
               <div className="col-6">

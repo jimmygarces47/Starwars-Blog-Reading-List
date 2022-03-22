@@ -33,7 +33,7 @@ export const Home = () => {
 
       <div className="container">
         <h1 className=" d-flex justify-content-start" style={{ color: "red" }}>
-          Vehiculos
+          starships
         </h1>
         <div className="d-flex flex-row flex-nowrap overflow-auto w-auto">
           {store.Vehiculos.map((item, i) => {
